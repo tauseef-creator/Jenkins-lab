@@ -1,14 +1,7 @@
 pipeline {
 
     agent any
-    stage('Pull Docker Image') {
-            steps {
-                script {
-                    // Pull the Node.js Docker image
-                    docker.image('node:latest').pull()
-                }
-            }
-        }
+    
     stages {
          stage('build') {
           steps {
