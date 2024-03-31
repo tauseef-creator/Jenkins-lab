@@ -1,14 +1,14 @@
 pipeline {
 
-    agent {
-        docker {
-            image 'node:10.0.0'
-            args '-u root'
+    agent any
+    stage('Pull Docker Image') {
+            steps {
+                script {
+                    // Pull the Node.js Docker image
+                    docker.image('node:latest').pull()
+                }
+            }
         }
-    }
-    environment { 
-        CI = 'true'
-    }
     stages {
          stage('build') {
           steps {
