@@ -16,12 +16,6 @@ pipeline {
                 
             }
         }
-         stage('kill') {
-            steps {
-               
-                    bat "docker compose down"
-                
-            }
-        }
+         
     }
 }
