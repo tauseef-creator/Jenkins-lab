@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Assuming you've set up your GitHub repository correctly in Jenkins
                 git 'https://github.com/tauseef-creator/Jenkins-lab'
             }
         }
@@ -17,13 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm install' // Assuming 'npm run build' is the command to build your app
+                sh 'npm install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npm test' // Assuming 'npm test' is the command to run your tests
+                sh 'npm test'
             }
         }
 
